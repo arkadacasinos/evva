@@ -102,7 +102,7 @@ export default function RootLayout({
   return (
     <html lang="ru" dir="ltr" className={`${evaSans.variable} ${evaSerif.variable}`}>
       <head>
-        <meta name="yandex-verification" content="00d30b6be7fe2c58" />
+        <meta name="yandex-verification" content="7b4cace1cbef6dd9" />
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <link rel="canonical" href="https://evacasino89.vercel.app/" />
