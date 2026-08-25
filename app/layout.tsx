@@ -1,0 +1,120 @@
+import { Analytics } from '@vercel/analytics/next'
+import { DM_Sans, Playfair_Display } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import './globals.css'
+
+const evaSans = DM_Sans({ subsets: ['latin', 'cyrillic'], variable: '--font-eva-sans' })
+const evaSerif = Playfair_Display({ subsets: ['latin', 'cyrillic'], variable: '--font-eva-serif' })
+
+// Рандомизированный title и description
+const randomTitles = [
+  'Eva Casino - Официальный сайт и зеркало онлайн',
+  'Ева Казино | Играть онлайн с рабочим зеркалом',
+  'Eva Casino официальный - Легальное казино онлайн',
+]
+
+const randomDescriptions = [
+  'Eva Casino - официальный сайт лицензированного казино. Рабочее зеркало, быстрая регистрация, выплаты. Ева казино онлайн - играть безопасно.',
+  'Ева казино онлайн с официальным сайтом. Рабочее зеркало Eva Casino для доступа. Безопасная игра с выводом в казино.',
+  'Eva Casino онлайн казино - официальный сайт и зеркало. Быстрые выплаты, лицензия. Ева казино - играть на реальные деньги.',
+]
+
+const randomTitle = randomTitles[Math.floor(Math.random() * randomTitles.length)]
+const randomDescription = randomDescriptions[Math.floor(Math.random() * randomDescriptions.length)]
+
+export const metadata: Metadata = {
+  title: randomTitle,
+  description: randomDescription,
+  metadataBase: new URL('https://evacasino89.vercel.app'),
+  alternates: {
+    canonical: 'https://evacasino89.vercel.app/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'ru_RU',
+    url: 'https://evacasino89.vercel.app/',
+    siteName: 'Eva Casino',
+    title: randomTitle,
+    description: randomDescription,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: randomTitle,
+    description: randomDescription,
+  },
+  keywords: [
+    'Eva Casino',
+    'Eva casino официальный сайт',
+    'Eva casino зеркало',
+    'ева казино',
+    'ева казино зеркало',
+    'ева казино зеркало рабочее',
+    'ева казино играть',
+    'ева казино онлайн',
+    'ева казино официальный',
+    'ева казино официальный сайт',
+    'eva casino играть',
+    'eva casino официальный',
+  ],
+  icons: {
+    icon: [
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: '/apple-icon.png',
+  },
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'light dark',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+  ],
+  userScalable: true,
+  initialScale: 1,
+  maximumScale: 5,
+  width: 'device-width',
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="ru" dir="ltr" className={`${evaSans.variable} ${evaSerif.variable}`}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <link rel="canonical" href="https://evacasino89.vercel.app/" />
+        <link rel="alternate" hrefLang="ru" href="https://evacasino89.vercel.app/" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Eva Casino" />
+      </head>
+      <body className="eva89-body">
+        {children}
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
+    </html>
+  )
+}

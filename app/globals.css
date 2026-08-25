@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+:root { color-scheme: dark; --eva89-ink: #091319; --eva89-paper: #f4f1e9; --eva89-gold: #e7b85b; --eva89-muted: #a8b4b5; --eva89-line: #294047; --eva89-white: #f8faf8; }
+@theme inline { --color-background: var(--eva89-ink); --color-foreground: var(--eva89-white); --font-sans: var(--font-eva-sans); --font-serif: var(--font-eva-serif); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--eva89-ink); }
+body { margin: 0; background: var(--eva89-ink); color: var(--eva89-white); font-family: var(--font-eva-sans), Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+.eva89-page { overflow: hidden; }
+.eva89-shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+.eva89-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: min(1200px, calc(100% - 32px)); margin: 0 auto; padding: 22px 0; border-bottom: 1px solid var(--eva89-line); }
+.eva89-logo { display: inline-flex; align-items: center; gap: 9px; color: var(--eva89-white); font-size: 18px; letter-spacing: -.04em; white-space: nowrap; }
+.eva89-logo strong { color: var(--eva89-gold); font-weight: 700; }
+.eva89-logo-mark { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--eva89-gold); color: var(--eva89-gold); font-family: Georgia, serif; font-size: 18px; }
+.eva89-nav { display: none; gap: 22px; color: var(--eva89-muted); font-size: 13px; }
+.eva89-nav a:hover, .eva89-footer a:hover { color: var(--eva89-gold); }
+.eva89-top-link { display: none; color: var(--eva89-gold); font-size: 13px; font-weight: 700; }
+.eva89-hero { display: flex; flex-direction: column; gap: 44px; width: min(1200px, calc(100% - 40px)); margin: 0 auto; padding: 64px 0 78px; }
+.eva89-hero-copy { max-width: 680px; }
+.eva89-kicker, .eva89-section-label { margin: 0 0 18px; color: var(--eva89-gold); font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 700px; margin-bottom: 22px; font-family: var(--font-eva-serif), Georgia, serif; font-size: clamp(42px, 10vw, 82px); font-weight: 400; letter-spacing: -.055em; line-height: .98; text-wrap: balance; }
+h2 { max-width: 840px; margin-bottom: 28px; color: var(--eva89-white); font-family: var(--font-eva-serif), Georgia, serif; font-size: clamp(32px, 6vw, 58px); font-weight: 400; letter-spacing: -.045em; line-height: 1.02; text-wrap: balance; }
+h3 { font-size: 20px; }
+p { color: var(--eva89-muted); font-size: 16px; line-height: 1.65; }
+.eva89-lead { max-width: 620px; font-size: 18px; }
+.eva89-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 42px; }
+.eva89-primary, .eva89-secondary { padding: 14px 19px; border: 1px solid var(--eva89-gold); font-size: 14px; font-weight: 700; }
+.eva89-primary { background: var(--eva89-gold); color: var(--eva89-ink); }
+.eva89-secondary { color: var(--eva89-gold); }
+.eva89-trust { display: flex; flex-wrap: wrap; gap: 18px; padding: 0; margin: 0; list-style: none; color: var(--eva89-muted); font-size: 12px; }
+.eva89-trust span { margin-right: 5px; color: var(--eva89-gold); }
+.eva89-hero-art { position: relative; min-height: 330px; overflow: hidden; border: 1px solid var(--eva89-line); background: #112a30; }
+.eva89-sun { position: absolute; right: 9%; top: 14%; width: 190px; height: 190px; border-radius: 50%; background: var(--eva89-gold); opacity: .9; }
+.eva89-card { position: absolute; display: flex; flex-direction: column; width: 112px; height: 158px; padding: 12px; border: 1px solid var(--eva89-ink); background: var(--eva89-paper); color: var(--eva89-ink); font: 700 28px Georgia, serif; box-shadow: 8px 10px 0 rgba(9,19,25,.25); }
+.eva89-card span { margin-top: auto; font-size: 42px; }
+.eva89-card-one { left: 19%; top: 23%; transform: rotate(-16deg); }
+.eva89-card-two { left: 37%; top: 31%; transform: rotate(11deg); color: #7e332c; }
+.eva89-chip { position: absolute; right: 12%; bottom: 12%; display: grid; width: 94px; height: 94px; place-items: center; border: 7px double var(--eva89-gold); border-radius: 50%; color: var(--eva89-gold); text-align: center; font: 700 14px Georgia, serif; }
+.eva89-chip small { font: 8px Arial, sans-serif; letter-spacing: .16em; }
+.eva89-art-caption { position: absolute; left: 18px; bottom: 0; color: var(--eva89-gold); font: 11px monospace; letter-spacing: .2em; }
+.eva89-intro, .eva89-content-section, .eva89-faq { padding: 82px 0; }
+.eva89-two-col, .eva89-content-wrap { display: grid; gap: 8px 44px; }
+.eva89-note { margin-top: 24px; padding: 22px; border-left: 2px solid var(--eva89-gold); color: var(--eva89-paper); font-size: 17px; line-height: 1.55; }
+.eva89-dark-section { padding: 82px 0; background: #0d2026; }
+.eva89-section-intro { max-width: 760px; }
+.eva89-game-grid { display: grid; gap: 14px; margin-top: 42px; }
+.eva89-game-card { padding: 25px; border: 1px solid var(--eva89-line); background: #132d34; }
+.eva89-game-number { display: block; margin-bottom: 40px; color: var(--eva89-gold); font: 34px Georgia, serif; }
+.eva89-game-card p { font-size: 14px; }
+.eva89-game-card a { color: var(--eva89-gold); font-size: 13px; font-weight: 700; }
+.eva89-checklist { max-width: 660px; margin-top: 34px; padding: 24px; background: #122a30; }
+.eva89-checklist h3 { color: var(--eva89-gold); font-family: Georgia, serif; font-weight: 400; }
+.eva89-checklist ul { display: grid; gap: 12px; padding-left: 18px; color: var(--eva89-paper); line-height: 1.5; }
+.eva89-pale-section { padding: 82px 0; background: var(--eva89-paper); color: var(--eva89-ink); }
+.eva89-pale-section h2 { color: var(--eva89-ink); }
+.eva89-pale-section p { color: #405256; }
+.eva89-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 36px; padding-top: 24px; border-top: 1px solid #b9c0b7; }
+.eva89-stats strong { display: block; color: var(--eva89-ink); font: 28px Georgia, serif; }
+.eva89-stats span { display: block; margin-top: 5px; color: #5c6a6b; font-size: 11px; line-height: 1.4; }
+blockquote { margin: 32px 0 0; padding: 22px 0 22px 22px; border-left: 2px solid var(--eva89-gold); color: var(--eva89-paper); font: 24px/1.3 Georgia, serif; }
+.eva89-steps { display: grid; gap: 0; padding: 0; margin: 40px 0 0; list-style: none; }
+.eva89-steps li { display: flex; gap: 18px; padding: 22px 0; border-top: 1px solid var(--eva89-line); }
+.eva89-steps li > span { color: var(--eva89-gold); font: 16px Georgia, serif; }
+.eva89-steps h3 { margin-bottom: 8px; }
+.eva89-steps p { margin: 0; font-size: 14px; }
+.eva89-faq details { border-top: 1px solid var(--eva89-line); }
+.eva89-faq summary { padding: 22px 0; cursor: pointer; color: var(--eva89-paper); font-size: 17px; font-weight: 700; list-style: none; }
+.eva89-faq summary::after { float: right; content: '+'; color: var(--eva89-gold); font-size: 22px; font-weight: 400; }
+.eva89-faq details[open] summary::after { content: '−'; }
+.eva89-faq details p { max-width: 720px; padding-bottom: 20px; margin-bottom: 0; }
+.eva89-footer { padding: 54px 0 24px; border-top: 1px solid var(--eva89-line); background: #071116; }
+.eva89-footer-top { display: flex; flex-direction: column; gap: 16px; }
+.eva89-footer-top p { max-width: 390px; margin: 0; font-size: 13px; }
+.eva89-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 36px 0; }
+.eva89-tags a { padding: 8px 10px; border: 1px solid var(--eva89-line); color: var(--eva89-muted); font-size: 11px; }
+.eva89-footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid var(--eva89-line); color: #748486; font-size: 11px; }
+.eva89-footer-bottom a { color: var(--eva89-gold); }
+@media (min-width: 700px) { .eva89-header { width: min(1200px, calc(100% - 64px)); } .eva89-nav, .eva89-top-link { display: flex; } .eva89-hero { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; padding: 100px 0; } .eva89-two-col, .eva89-content-wrap { grid-template-columns: repeat(2, 1fr); } .eva89-game-grid { grid-template-columns: repeat(3, 1fr); } .eva89-footer-top { flex-direction: row; justify-content: space-between; align-items: start; } }
+@media (min-width: 1100px) { .eva89-shell { width: min(1120px, calc(100% - 80px)); } .eva89-hero { width: min(1200px, calc(100% - 80px)); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
